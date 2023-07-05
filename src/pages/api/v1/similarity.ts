@@ -21,7 +21,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     const { text1, text2 } = reqSchema.parse(body)
-
     const validApiKey = await db.apiKey.findFirst({
       where: {
         key: apiKey,
@@ -32,23 +31,21 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (!validApiKey) {
       return res.status(401).json({ error: 'Unauthorized' })
     }
-
     const start = new Date()
-    const embeddings = await Promise.all(
-      [text1, text2].map(async (text) => {
-        const res = await openai.createEmbedding({
-          model: 'text-embedding-ada-002',
-          input: text,
-        })
+    
+    // const embeddings = await Promise.all(
+    //   [text1, text2].map(async (text) => {
+    //     const res = await openai.createEmbedding({
+    //       input: text,
+    //       model: "text-embedding-ada-002"
+    //     })
+    //     return res.data.data[0].embedding
+    //   })
+    // )
 
-        return res.data.data[0].embedding
-      })
-    )
-
-    const similarity = cosineSimilarity(embeddings[0], embeddings[1])
-
+    // const similarity = cosineSimilarity(embeddings[0], embeddings[1])
     const duration = new Date().getTime() - start.getTime()
-
+    const similarity = 1;
     // Persist request
     await db.apiRequest.create({
       data: {
@@ -60,14 +57,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         usedApiKey: validApiKey.key,
       },
     })
-
     return res.status(200).json({ success: true, text1, text2, similarity })
   } catch (error) {
     if (error instanceof z.ZodError) {
       return res.status(400).json({ error: error.issues })
     }
 
-    return res.status(500).json({ error: 'Internal server error' })
+    return res.status(500).json({ error: 'Internal server error-test' })
   }
 }
 

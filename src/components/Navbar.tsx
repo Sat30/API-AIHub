@@ -10,8 +10,8 @@ const Navbar = async () => {
   const session = await getServerSession(authOptions)
 
   return (
-    <div className='fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900/75 z-50 top-0 left-0 right-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm flex items-center justify-between'>
-      <div className='container max-w-7xl mx-auto w-full flex justify-between items-center'>
+    <div className='fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-20 border-b shadow-sm backdrop-blur-sm bg-white/75 dark:bg-slate-900/75 border-slate-300 dark:border-slate-700'>
+      <div className='container flex items-center justify-between w-full mx-auto max-w-7xl'>
         <Link href='/' className={buttonVariants({ variant: 'link' })}>
           Text Similarity v1.0
         </Link>
@@ -20,7 +20,7 @@ const Navbar = async () => {
           <ThemeToggle />
         </div>
 
-        <div className='hidden md:flex gap-4'>
+        <div className='hidden gap-4 md:flex'>
           <ThemeToggle />
           <Link
             href='/documentation'

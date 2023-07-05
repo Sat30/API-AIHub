@@ -1,0 +1,73 @@
+www.similaritytext/api.com
+
+Packages
+
+mui/x-data-grid - For table
+prism react-renderer - for flow like chatgpt answer
+Toast - Notification 
+lucid-react = icons
+cva
+
+
+
+
+
+keyboard Shortcutd
+ctrl + space
+
+
+
+REVISIT
+forwardref
+
+
+EXTENSION:
+
+github-copilot  
+prettier-plugin-tailwindcss - order tailwind classes
+
+TAILWIND CSS:
+md - medium >= screen
+scale-0 scale-100
+flex-col with item-center
+flex-row with justify center
+
+
+STUDIED :
+
+1. Nextjs is not SPA, it loads doc(html + js) require for current page only
+2. For each page queried in url tab, makes request to serverless function and some components of page are either rendered in server or client side
+ 
+- (Custom elements) Creating Paragraph (all features p + some more features)
+  and same for heading
+
+- Provider - provides session an theme to all it's childern
+
+- @ts-expect-error server component - telling compiler to avoid next line
+
+- folder name : (docs) - not reflected in route path
+
+-- Auth
+
+- jwt Callback is made when server receives jwt token from provider then server will create exteneded session using session callback
+
+- jwt token is stored in local storage 
+
+
+-- Typescript
+
+FC - generic fuction which accepts types as arguements
+
+type error : string | null
+error ?? '' if error type is null
+
+
+Experiment :  
+1. <DropdownMenuContent align='end' forceMount> properties of align and forcemount
+
+2. Button variance
+
+3. authoption jwt callback
+
+
+

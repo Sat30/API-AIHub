@@ -18,12 +18,11 @@ export default function Home() {
           <LargeHeading
             size='lg'
             className='three-d text-black dark:text-light-gold'>
-            Easily determine <br /> text similarity.
+            Easily Access <br /> API-end-Points.
           </LargeHeading>
 
           <Paragraph className='max-w-xl lg:text-left'>
-            With the Text Similarity API, you can easily determine the
-            similarity between two pieces of text with a free{' '}
+            With the AI-APIHub, you can easily get access to several AI-endpoints with a free API key.{' '}
             <Link
               href='/login'
               className='underline underline-offset-2 text-black dark:text-light-gold'>
