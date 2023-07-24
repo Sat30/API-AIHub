@@ -1,4 +1,4 @@
-# Similarity API
+# AI-APIHub
 ## Features
 
 - Rate Limited API routes
